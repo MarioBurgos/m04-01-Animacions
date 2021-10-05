@@ -1,0 +1,87 @@
+.pilota {
+    width: 200px;
+    height: 200px;
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #f5af19, #f12711);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #f5af19, #f12711);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 50%;
+    position: relative;
+    animation: vertical 1s ease-out 0s alternate infinite;
+    box-shadow: inset -25px -25px 50px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    justify-content: center;
+}
+
+.pilota p {
+    font-family: 'Fredoka One', cursive;
+    position: relative;
+    top: 50%;
+    animation: rotar 5s linear infinite;
+}
+
+
+/* .bota-vertical {
+    animation-name: vertical;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+} */
+
+.mou-horizontal {
+    animation-name: horizontal;
+    animation-duration: 3.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+.deformar {
+    /*from Animate.css*/
+    animation: pulse;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+}
+
+@keyframes vertical {
+    from {
+        transform: translateY(calc(100vh - 200px));
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes horizontal {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(calc(100vw - 200px));
+    }
+}
+
+@keyframes rotar {
+    from {
+        transform: rotateY(0deg) translateZ(90px);
+        visibility: inherit;
+    }
+    to {
+        transform: rotateY(360deg) translateZ(90px);
+        visibility: hidden;
+    }
+    0% {
+        opacity: 100%;
+    }
+    30% {
+        opacity: 0%;
+    }
+    70% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
